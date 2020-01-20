@@ -10,7 +10,10 @@ let package = Package(
         .target(
             name: "KVNProgress",
             path: "KVNProgress",            
-            sources: ["Classes", "Categories", "Resources"]            
+            sources: ["Classes", "Categories", "Resources"],
+            cSettings: [
+                .headerSearchPath("KVNProgress/Categories")
+            ]            
         )
     ],
     swiftLanguageVersions: [.v5]
