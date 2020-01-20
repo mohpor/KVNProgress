@@ -12,7 +12,8 @@ let package = Package(
             path: "KVNProgress",            
             sources: ["Classes", "Categories", "Resources"],
             cSettings: [
-                .headerSearchPath("KVNProgress/Categories")
+                .headerSearchPath("Classes"),
+                .headerSearchPath("Categories")
             ]            
         )
     ],
