@@ -33,6 +33,7 @@
 		1482704E1AE2CBB100873272 /* KVNUIColor+KVNContrastSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482704D1AE2CBB100873272 /* KVNUIColor+KVNContrastSpec.m */; };
 		3A4209CC1741B0BFAD177CCA /* libPods-KVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F7507D9468CBD6A7B46B12 /* libPods-KVNProgress.a */; };
 		686E908205D07A4738692DCA /* libPods-KVNProgressTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B390319760D297916CF297A /* libPods-KVNProgressTests.a */; };
+		84003E2923D5DB7600DA0BE6 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84003E2823D5DB7600DA0BE6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		1482704D1AE2CBB100873272 /* KVNUIColor+KVNContrastSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KVNUIColor+KVNContrastSpec.m"; sourceTree = "<group>"; };
 		3CBEDC824BB1314739AB5712 /* Pods-KVNProgress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVNProgress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KVNProgress/Pods-KVNProgress.debug.xcconfig"; sourceTree = "<group>"; };
 		5D5867664AF2F9D1F9D0A8D4 /* Pods-KVNProgressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVNProgressTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KVNProgressTests/Pods-KVNProgressTests.release.xcconfig"; sourceTree = "<group>"; };
+		84003E2723D5DB7600DA0BE6 /* KVNProgress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KVNProgress-Bridging-Header.h"; sourceTree = "<group>"; };
+		84003E2823D5DB7600DA0BE6 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		9B390319760D297916CF297A /* libPods-KVNProgressTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KVNProgressTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D5326616CBB64932F6C170 /* Pods-KVNProgress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVNProgress.release.xcconfig"; path = "Pods/Target Support Files/Pods-KVNProgress/Pods-KVNProgress.release.xcconfig"; sourceTree = "<group>"; };
 		C02CBFB48A09FB71450DAAF1 /* Pods-KVNProgressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVNProgressTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KVNProgressTests/Pods-KVNProgressTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,11 +134,13 @@
 		0AA0DCDE1930DFAD00FDD29F = {
 			isa = PBXGroup;
 			children = (
+				84003E2823D5DB7600DA0BE6 /* Package.swift */,
 				0AA0DCF01930DFAD00FDD29F /* KVNProgress */,
 				0AA0DD0F1930DFAD00FDD29F /* KVNProgressTests */,
 				0AA0DCE91930DFAD00FDD29F /* Frameworks */,
 				0AA0DCE81930DFAD00FDD29F /* Products */,
 				BDE9010E96035726DA6B5F3B /* Pods */,
+				84003E2723D5DB7600DA0BE6 /* KVNProgress-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,6 +309,7 @@
 				TargetAttributes = {
 					0AA0DCE61930DFAD00FDD29F = {
 						DevelopmentTeam = UAY63PVC53;
+						LastSwiftMigration = 1130;
 					};
 					0AA0DD071930DFAD00FDD29F = {
 						TestTargetID = 0AA0DCE61930DFAD00FDD29F;
@@ -315,6 +321,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -437,6 +444,7 @@
 				0A53757B1A45784200A7743C /* KVNProgressConfiguration.m in Sources */,
 				0AA0DD281930E62A00FDD29F /* UIImage+KVNImageEffects.m in Sources */,
 				0A85E76F1932753300B16419 /* main.m in Sources */,
+				84003E2923D5DB7600DA0BE6 /* Package.swift in Sources */,
 				0A835D691AB339E900CB321A /* UIColor+KVNContrast.m in Sources */,
 				0A85E7781932755300B16419 /* KVNViewController.m in Sources */,
 				0AA0DD301931EB3D00FDD29F /* UIImage+KVNEmpty.m in Sources */,
@@ -573,6 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -583,8 +592,12 @@
 				);
 				INFOPLIST_FILE = "KVNProgress/KVNProgress-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KVNProgress-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -596,6 +609,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -606,8 +620,11 @@
 				);
 				INFOPLIST_FILE = "KVNProgress/KVNProgress-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KVNProgress-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -617,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C02CBFB48A09FB71450DAAF1 /* Pods-KVNProgressTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KVNProgress.app/KVNProgress";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -640,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D5867664AF2F9D1F9D0A8D4 /* Pods-KVNProgressTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KVNProgress.app/KVNProgress";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
